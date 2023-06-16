@@ -16,7 +16,7 @@ public class Pizza {
         addedToppings = false;
         taken=false;
         this.bill = "";
-        this.price = (isVeg ? 300 : 400);
+        price = (isVeg ? 300 : 400);
         // your code goes here
 
         if(isVeg){
@@ -42,8 +42,14 @@ public class Pizza {
 
     public void addExtraToppings(){
         if(!addedToppings){
-            price += 70;
-            bill += "Extra Toppings Added: 70"+"\n";
+            if(isVeg){
+                price += 70;
+                bill += "Extra Toppings Added: 70"+"\n";
+            }
+            else{
+                price += 120;
+                bill += "Extra Toppings Added: 120"+"\n";
+            }
         }
         addedToppings = true;
         // your code goes here
